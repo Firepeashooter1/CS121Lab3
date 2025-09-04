@@ -11,19 +11,21 @@
 
 #include <stdio.h>
 
-const int Max = 9;
+const int MAX = 9;
 
-void printVal(int*) {
-
+void printVal(int valarr[], int valSize) {
+	for (int i = 0; i < valSize; i++) {
+		printf("%d", valarr[i]);
+	}
 }
 void sort(int*) {}
 void swap(int*, int*) {}
 
 int main() {
-	int val[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
+	int val[MAX] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
 
 	printf("Before: \n");
-	printVal(val);
+	printVal(val, MAX);
 
 	//text swap
 	int x = 3;
@@ -31,11 +33,11 @@ int main() {
 
 	printf("x: %d, y: %d \n", x, y);
 	swap(&x, &y);
-	printf("x: %d, y%d \n", x, y);
+	printf("x: %d, y: %d \n", x, y);
 
 	sort(val);
 	printf("After: \n");
-	printVal(val);
+	printVal(val, MAX);
 
 	return 0;
 
