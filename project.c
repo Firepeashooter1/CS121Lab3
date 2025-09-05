@@ -13,11 +13,14 @@
 
 const int Max = 9;
 
-void PrintValue(int ValueArray[], int ValueSize) {
-	for (int i = 0; i < ValueSize; i++) {
-		printf("%d", ValueSize[i]);
+void PrintValue(int ValueArray[]) {
+
+	for (int i = 0; i < Max; i++) {
+		printf("%d", ValueArray[i]);
 	}//End if
-	 //
+	
+	printf("\n");
+
 }//End Print Value
 
 void Sort(int*) {
@@ -27,21 +30,21 @@ void Swap(int*, int*) {
 }//End Swap
 
 int main() {
-	int Value[Max] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
+	int Value[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
 
 	printf("Before: \n");
-	PrintValue(Value, Max);
+	PrintValue(Value);
 
 	int SwapX = 3;
 	int SwapY = 5;
 
 	printf("x: %d, y: %d \n", SwapX, SwapY);
-	swap(&SwapX, &SwapY);
+	Swap(&SwapX, &SwapY);
 	printf("x: %d, y: %d \n", SwapX, SwapY);
 
-	Sort(Vaule);
+	Sort(Value);
 	printf("After: \n");
-	PrintValue(Value, Max);
+	PrintValue(Value);
 
 	return 0;
 
