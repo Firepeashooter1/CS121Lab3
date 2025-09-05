@@ -1,4 +1,14 @@
 /* constrant MAX  is max length of array
+ *
+ * print value
+ *  for i is less than max
+ *   print vault of array of i
+ *
+ * swap
+ *  make temporay equal x
+ *  make x equal y
+ *  max y equal tempoary
+ *
  * function sort (arry);
  * 	create an integer variables i and j
  * 	for i from zero to MAX - 1:
@@ -24,13 +34,11 @@ void PrintValue(int ValueArray[]) {
 
 }//End Print Value
 void Swap(int *SwapX, int *SwapY) {
-	printf("x: %d, y: %d \n", *SwapX, *SwapY);
 
 	int Temporary = *SwapX;
 	*SwapX = *SwapY;
 	*SwapY = Temporary;
 
-	printf("x: %d, y: %d \n", *SwapX, *SwapY);
 }//End Swap
 
 void Sort(int ValueArray[]) {
@@ -42,6 +50,7 @@ void Sort(int ValueArray[]) {
 
 			if (ValueArray[j] > ValueArray[j + 1]) {
 				Swap(&ValueArray[j], &ValueArray[j + 1]);
+				PrintValue(&ValueArray[j + 1]);
 			}//End if
 
 		}//End j for
@@ -55,6 +64,13 @@ int main() {
 
 	printf("Before: \n");
 	PrintValue(ValueArray);
+
+	int x = 3;
+	int y = 5;
+
+	printf("x: %d, y: %d \n", x, y);
+	Swap(&x, &y);
+	printf("x: %d, y: %d \n", x, y);
 
 	Sort(ValueArray);
 
