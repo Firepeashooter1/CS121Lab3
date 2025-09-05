@@ -31,7 +31,13 @@ void Sort(int ValueArray[]) {
 		for (j = 0; j < Max - i; j++) {
 
 			if (ValueArray[j] > ValueArray[j + 1]) {
-				Swap(i, j);
+				ValueArray[j];
+			}//End if
+
+		}//End j for
+
+	}//End i for
+	
 }//End Sort
 
 void Swap(int SwapX, int SwapY) {
