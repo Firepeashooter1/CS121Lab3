@@ -23,17 +23,29 @@ void PrintValue(int ValueArray[]) {
 
 }//End Print Value
 
-void Sort(int*) {
+void Sort(int ValueArray[]) {
+	int i, j;
+
+	for (i = 0; i < Max - 1; i++) {
+
+		for (j = 0; j < Max - i; j++) {
+
+			if (ValueArray[j] > ValueArray[j + 1]) {
+				Swap(i, j);
 }//End Sort
 
-void Swap(int*, int*) {
+void Swap(int SwapX, int SwapY) {
+	SwapX = SwapY;
+
+	SwapY = SwapY + 1;
+	
 }//End Swap
 
 int main() {
-	int Value[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
+	int ValueArray[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
 
 	printf("Before: \n");
-	PrintValue(Value);
+	PrintValue(ValueArray);
 
 	int SwapX = 3;
 	int SwapY = 5;
@@ -42,9 +54,9 @@ int main() {
 	Swap(&SwapX, &SwapY);
 	printf("x: %d, y: %d \n", SwapX, SwapY);
 
-	Sort(Value);
+	Sort(ValueArray);
 	printf("After: \n");
-	PrintValue(Value);
+	PrintValue(ValueArray);
 
 	return 0;
 
