@@ -14,20 +14,23 @@
 const int Max = 9;
 
 void PrintValue(int ValueArray[]) {
+	printf("[");
 
 	for (int i = 0; i < Max; i++) {
-		printf("%d", ValueArray[i]);
+		printf("%d ", ValueArray[i]);
 	}//End if
 	
-	printf("\n");
+	printf("]\n");
 
 }//End Print Value
 void Swap(int *SwapX, int *SwapY) {
-	
+	printf("x: %d, y: %d \n", *SwapX, *SwapY);
+
 	int Temporary = *SwapX;
 	*SwapX = *SwapY;
 	*SwapY = Temporary;
 
+	printf("x: %d, y: %d \n", *SwapX, *SwapY);
 }//End Swap
 
 void Sort(int ValueArray[]) {
@@ -53,13 +56,8 @@ int main() {
 	printf("Before: \n");
 	PrintValue(ValueArray);
 
-	int SwapX = 3;
-	int SwapY = 5;
-
-	printf("x: %d, y: %d \n", SwapX, SwapY);
-	printf("x: %d, y: %d \n", SwapX, SwapY);
-
 	Sort(ValueArray);
+
 	printf("After: \n");
 	PrintValue(ValueArray);
 
