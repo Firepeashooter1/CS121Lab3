@@ -11,36 +11,40 @@
 
 #include <stdio.h>
 
-const int MAX = 9;
+const int Max = 9;
 
-void printVal(int valarr[], int valSize) {
-	for (int i = 0; i < valSize; i++) {
-		printf("%d", valarr[i]);
-	}
-}
-void sort(int*) {}
-void swap(int*, int*) {}
+void PrintValue(int ValueArray[], int ValueSize) {
+	for (int i = 0; i < ValueSize; i++) {
+		printf("%d", ValueSize[i]);
+	}//End if
+	 //
+}//End Print Value
+
+void Sort(int*) {
+}//End Sort
+
+void Swap(int*, int*) {
+}//End Swap
 
 int main() {
-	int val[MAX] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
+	int Value[Max] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
 
 	printf("Before: \n");
-	printVal(val, MAX);
+	PrintValue(Value, Max);
 
-	//text swap
-	int x = 3;
-	int y = 5;
+	int SwapX = 3;
+	int SwapY = 5;
 
-	printf("x: %d, y: %d \n", x, y);
-	swap(&x, &y);
-	printf("x: %d, y: %d \n", x, y);
+	printf("x: %d, y: %d \n", SwapX, SwapY);
+	swap(&SwapX, &SwapY);
+	printf("x: %d, y: %d \n", SwapX, SwapY);
 
-	sort(val);
+	Sort(Vaule);
 	printf("After: \n");
-	printVal(val, MAX);
+	PrintValue(Value, Max);
 
 	return 0;
 
-}//end main
+}//End Main
 
 
