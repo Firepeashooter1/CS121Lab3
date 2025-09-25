@@ -23,62 +23,61 @@
 
 const int Max = 9;
 
-void PrintValue(int ValueArray[]) {
-	printf("[");
+void PrintValue(int *ValueArray) {
+    printf("[");
+    
+    for (int i = 0; i < Max; i++) {
+        printf("%d ", *(ValueArray + i)); 
+    }//End for i
+    
+    printf("]\n");
+}//End PrintValue
 
-	for (int i = 0; i < Max; i++) {
-		printf("%d ", ValueArray[i]);
-	}//End if
-	
-	printf("]\n");
-
-}//End Print Value
 void Swap(int *SwapX, int *SwapY) {
-
-	int Temporary = *SwapX;
-	*SwapX = *SwapY;
-	*SwapY = Temporary;
-
+    int Temporary = *SwapX;
+    *SwapX = *SwapY;
+    *SwapY = Temporary;
 }//End Swap
 
-void Sort(int ValueArray[]) {
-	int i, j;
+void Sort(int *ValueArray) {
 
-	for (i = 0; i < Max - 1; i++) {
+    for (int i = 0; i < Max - 1; i++) {
 
-		for (j = 0; j < Max - i; j++) {
+        for (int j = 0; j < Max - i - 1; j++) {
+            int *current = ValueArray + j;
+            int *next = ValueArray + j + 1;
 
-			if (ValueArray[j] > ValueArray[j + 1]) {
-				Swap(&ValueArray[j], &ValueArray[j + 1]);
-				PrintValue(&ValueArray[j + 1]);
-			}//End if
+            if (*current > *next) {
+                Swap(current, next);
+                PrintValue(ValueArray);
+            }//End if
 
-		}//End j for
-
-	}//End i for
+        }//End for j
 	
+    }//End for i
+
 }//End Sort
 
 int main() {
-	int ValueArray[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
+    int ValueArray[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
 
-	printf("Before: \n");
-	PrintValue(ValueArray);
+    printf("Before: \n");
+    PrintValue(ValueArray);
 
-	int x = 3;
-	int y = 5;
+    int x = 3;
+    int y = 5;
+    int *ptrX = &x;
+    int *ptrY = &y;
 
-	printf("x: %d, y: %d \n", x, y);
-	Swap(&x, &y);
-	printf("x: %d, y: %d \n", x, y);
+    printf("x: %d, y: %d \n", *ptrX, *ptrY);
+    Swap(ptrX, ptrY);
+    printf("x: %d, y: %d \n", *ptrX, *ptrY);
 
-	Sort(ValueArray);
+    Sort(ValueArray);
 
-	printf("After: \n");
-	PrintValue(ValueArray);
+    printf("After: \n");
+    PrintValue(ValueArray);
 
-	return 0;
-
-}//End Main
-
+    return 0;
+}//End main
 
