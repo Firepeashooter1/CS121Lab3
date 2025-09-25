@@ -1,24 +1,3 @@
-/* constrant MAX  is max length of array
- *
- * print value
- *  for i is less than max
- *   print vault of array of i
- *
- * swap
- *  make temporay equal x
- *  make x equal y
- *  max y equal tempoary
- *
- * function sort (arry);
- * 	create an integer variables i and j
- * 	for i from zero to MAX - 1:
- * 		for j from zero to MAX - 1:
- * 			if array[j] > array[j+i]:
- * 				swap array[j] woth array[j+1]
- * 				printArray(array)
- *
- */
-
 #include <stdio.h>
 
 const int Max = 9;
